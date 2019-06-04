@@ -1,8 +1,9 @@
 <?php
     // as variáveis login e senha recebem os dados digitados na página anterior 
- 
-    $id =  3;
-
+    
+    
+  $id =  4;
+  
   $conn = new PDO("mysql:host=localhost;dbname=bd_looking", "root", "");
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

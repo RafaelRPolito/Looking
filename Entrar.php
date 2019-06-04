@@ -1,5 +1,5 @@
 <?php
-
+/*
 session_start();
 include('conexao.php');
 
@@ -23,5 +23,36 @@ $senha = $_POST['senha'];
           else
             {
             header('Location: ../view/login.php');
-            }
+            }*/
+
+
+class Entrar{
+    
+    private $email;
+    private $senha;
+    
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getSenha() {
+        return $this->senha;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+    function __construct($email, $senha) {
+        $this->email = $email;
+        $this->senha = $senha;
+    }
+
+    
+}
+
 ?>

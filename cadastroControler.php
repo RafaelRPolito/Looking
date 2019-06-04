@@ -7,10 +7,13 @@ include ('../model/Entrar.php');
 
 
 $bavaliacao = $_POST['bavaliacao'];
-$cadastro = new CadastroDAO();
-
 $bcadastro = $_POST['bcadastro'];
 $bentra = $_POST['bentra'];
+
+$cadastro = new CadastroDAO();
+
+
+
 
 
 if($bavaliacao=="Cadastrar") {

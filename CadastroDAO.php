@@ -26,4 +26,51 @@ class CadastroDAO {
         }
     }
 
+     function login($email, $senha){
+	  try {
+              
+              session_start();
+              
+               include('conexao.php');
+           
+                 $query = "SELECT * FROM usuario WHERE email = '{$email}' AND senha = '{$senha}'";
+     		 $result = mysqli_query($conection, $query);
+       		 $busca = mysqli_num_rows($result);
+                 $linha = mysqli_fetch_assoc($result);
+                 
+        if ($busca > 0)
+            { 
+            $_SESSION['usuario'] = $linha['idusuario'];
+            $usu = $linha['idusuario'];
+            $_SESSION['nome'] = $linha['nome'];
+            $_SESSION['email'] = $linha['email'];
+         
+          
+            header('Location: ../view/avaliacao.php');
+            
+            exit;
+            }
+          else
+            {
+               
+           header('Location: ../view/login.php');
+            }
+        } catch (PDOException $e) {
+       	      echo 'Error: ' . $e->getMessage();
+        }
+	
+
+	}
+        
+       
+        
+
 }
+?>
+<html>
+    <body>
+          <form method="post" action="../view/avaliacao.php"> 
+              <input type="hidden" name="usu" value="<?php echo  $usu;?>">
+          </form>
+    </body>
+</html>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ?>
 
@@ -17,7 +17,7 @@
     <body>
         <header>
             <div class="faixa">
-                  <form method="post" action="../model/Entrar.php"> 
+                <form method="post" action="../controler/cadastroControler.php"> 
              
                 <div class="row">
                     <div class="col-sm-7">

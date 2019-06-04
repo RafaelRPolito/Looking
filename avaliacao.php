@@ -1,14 +1,12 @@
 <?php
-    // session_start inicia a sessão
-    session_start();
     // as variáveis login e senha recebem os dados digitados na página anterior 
-    $id = 2;//$_POST['idusuario']; 
-   // $nome = $_POST['nome'];
+ 
+    $id =  3;
 
   $conn = new PDO("mysql:host=localhost;dbname=bd_looking", "root", "");
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $consulta = $conn->query("SELECT nome, tipo, ano, descricao, nota FROM produto WHERE Codusuario = $id");
+  $consulta = $conn->query("SELECT nome, tipo, ano, descricao, nota FROM produto WHERE Codusuario = '{$id}'");
 ?>
 <html>
     <head>
